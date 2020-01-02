@@ -6,6 +6,7 @@ import FullPageDiv from '../components/primitives/FullPageDiv'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
 import Skills from '../components/Skills'
+import Footer from '../components/Footer'
 import { Link } from 'react-scroll'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 
@@ -54,7 +55,7 @@ const DotCom = styled.div`
   display: inline-block;
 
   input {
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
     font-weight: 700;
     opacity: 0.5;
     background: none;
@@ -68,7 +69,7 @@ const DotCom = styled.div`
 
   @media (min-width: 992px) {
     input {
-      font-size: 3rem !important;
+      font-size: 2rem !important;
       width: 60vw;
     }
   }
@@ -155,6 +156,7 @@ const IndexPage = () => (
 		<About />
 		<Skills />
 		<Portfolio />
+		<Footer/>
 	</>
 )
 

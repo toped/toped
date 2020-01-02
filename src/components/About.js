@@ -2,7 +2,7 @@ import React from 'react'
 import SmallText from '../components/primitives/SmallText'
 import styled from 'styled-components'
 import SectionTitle from './primitives/SectionTitle'
-// import Portrait from '../assets/imgs/IMG_0419.jpg'
+import SocialSection from './primitives/SocialSection'
 
 const AboutContainer = styled.div`
   background: #f2f2f2;
@@ -16,15 +16,6 @@ const BioContainer = styled.div`
     color: rgba(0, 0, 0, 0.9);
     display: block;
     margin-top: 1rem;
-  }
-`
-
-const SocialSection = styled.div`
-  a {
-    color: rgba(0, 0, 0, 0.9);
-    padding: 5px 20px 0 0;
-    font-size: 1.5rem !important;
-    display: inline-block;
   }
 `
 
@@ -43,8 +34,8 @@ const About = () => {
               About<span>Me</span>
 						</SectionTitle>
 						<p>
-              Hey! I'm Tope, a web developer and creative professional residing
-              in Dallas, TX. I've been designing and developing professionally
+              Hey! I&apos;m Tope, a web developer and creative professional residing
+              in Dallas, TX. I&apos;ve been designing and developing professionally
               for 5 years, and I work on all types of projects: web & mobile
               applications, marketing campaigns, non-profit websites and more.
 							<b>
@@ -53,36 +44,7 @@ const About = () => {
 								</Email>
 							</b>
 						</p>
-						<SocialSection>
-							<a
-								href="https://github.com/toped"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-github" aria-hidden="true"></i>
-							</a>
-							<a
-								href="https://www.linkedin.com/in/tope-daramola-0002375b/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-linkedin" aria-hidden="true"></i>
-							</a>
-							<a
-								href="https://www.instagram.com/_toped/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-instagram" aria-hidden="true"></i>
-							</a>
-							<a
-								href="https://www.facebook.com/tope.d19?ref=bookmarks"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-facebook" aria-hidden="true"></i>
-							</a>
-						</SocialSection>
+						<SocialSection/>
 					</BioContainer>
 				</div>
 				<div className="col-md-4 col-fill col-no-padding">

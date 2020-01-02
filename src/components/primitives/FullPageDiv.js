@@ -1,18 +1,10 @@
 import styled from 'styled-components'
-import bg from '../../assets/imgs/header-img.jpg'
+// import bg from '../../assets/imgs/header-img.jpg'
 
 export const FullPageDiv = styled.div`
   height: 96vh;
   box-sizing: border-box;
-  background: -webkit-gradient(
-        linear,
-        0% 0%,
-        100% 0%,
-        from(rgba(16, 16, 16, 1.75)),
-        to(rgba(16, 16, 16, 1.75))
-      )
-      0% 0% / cover,
-    url(${bg}) no-repeat center center fixed;
+  background: rgba(16, 16, 16, 1.75);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
