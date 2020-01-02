@@ -27,6 +27,7 @@ module.exports = {
         icon: `src/assets/imgs/logo.png`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-offline',
     {
 			resolve: 'gatsby-plugin-styled-components',
 			plugins: [
