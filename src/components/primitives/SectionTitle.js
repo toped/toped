@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const SectionTitle = styled.p`
   font-family: "Montserrat", sans-serif;
@@ -8,6 +8,6 @@ export const SectionTitle = styled.p`
   span {
     font-weight: 400;
   }
-`;
+`
 
-export default SectionTitle;
+export default SectionTitle

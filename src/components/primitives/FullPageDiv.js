@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import bg from "../../assets/imgs/header-img.jpg";
+import styled from 'styled-components'
+import bg from '../../assets/imgs/header-img.jpg'
 
 export const FullPageDiv = styled.div`
-  height: 100vh;
+  height: 96vh;
   box-sizing: border-box;
   background: -webkit-gradient(
         linear,
@@ -17,6 +17,6 @@ export const FullPageDiv = styled.div`
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-`;
+`
 
-export default FullPageDiv;
+export default FullPageDiv

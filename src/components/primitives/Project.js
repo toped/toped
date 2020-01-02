@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import styled, { css } from "styled-components";
-import { Badge } from "evergreen-ui";
-import VisibilitySensor from "react-visibility-sensor";
+import React, { useState, useEffect } from 'react'
+import styled, { css } from 'styled-components'
+import { Badge } from 'evergreen-ui'
+import VisibilitySensor from 'react-visibility-sensor'
 
 const ProjectContainer = styled.div`
   font-family: "Nunito Sans", sans-serif;
@@ -41,7 +41,7 @@ const ProjectContainer = styled.div`
   }
 
   ${props =>
-    props.visible &&
+		props.visible &&
     props.mobile &&
     css`
       color: #fff;
@@ -84,80 +84,80 @@ const ProjectContainer = styled.div`
       top: -50%;
     }
   }
-`;
+`
 
 const ProjectName = styled.h2`
   font-weight: 700;
-`;
+`
 
 const ProjectTextTop = styled.p`
   font-family: "Roboto Condensed", sans-serif;
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 400;
-`;
+`
 
 const ProjectTextBottom = styled.p`
   font-size: 0.9rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 300;
-`;
+`
 
 const Project = props => {
-  const [isMobile , setIsMobile] = useState(true)
-  const [hovering, setHovering] = useState(false);
+	const [isMobile , setIsMobile] = useState(true)
+	const [hovering, setHovering] = useState(false)
 
-  const handleOnMouseEnter = () => {
-    if (!isMobile) {
-      setHovering(prev => !prev);
-    }
-  };
+	const handleOnMouseEnter = () => {
+		if (!isMobile) {
+			setHovering(prev => !prev)
+		}
+	}
 
-  const onChange = isVisible => {
-    if (isMobile) {
-      setHovering(isVisible);
-    }
-  };
+	const onChange = isVisible => {
+		if (isMobile) {
+			setHovering(isVisible)
+		}
+	}
 
-  useEffect(() => {
-     setIsMobile(window.matchMedia("only screen and (max-width: 760px)").matches);
-  }, [])
+	useEffect(() => {
+		setIsMobile(window.matchMedia('only screen and (max-width: 760px)').matches)
+	}, [])
 
-  const { name, projectType, image, url, tech } = props;
+	const { name, projectType, image, url, tech } = props
 
-  return (
-    <VisibilitySensor onChange={onChange} minTopValue={100} active={isMobile}>
-      <ProjectContainer
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseEnter}
-        visible={hovering}
-        mobile={isMobile}
-      >
-        <ProjectTextTop>Client</ProjectTextTop>
-        <ProjectName>{name}</ProjectName>
-        <ProjectTextBottom>
+	return (
+		<VisibilitySensor onChange={onChange} minTopValue={100} active={isMobile}>
+			<ProjectContainer
+				onMouseEnter={handleOnMouseEnter}
+				onMouseLeave={handleOnMouseEnter}
+				visible={hovering}
+				mobile={isMobile}
+			>
+				<ProjectTextTop>Client</ProjectTextTop>
+				<ProjectName>{name}</ProjectName>
+				<ProjectTextBottom>
           [ {projectType} - <a href={url}>View Project</a> ]
-        </ProjectTextBottom>
-        <div />
-        <img src={require(`../../assets/imgs/projects/${image}`)} alt="" />
-        {tech.length > 0
-          ? tech.map(name => {
-              return (
-                <Badge
-                  className="mr-2"
-                  key={name}
-                  color="neutral"
-                  isSolid={hovering === false}
-                >
-                  {name}
-                </Badge>
-              );
-            })
-          : null}
-      </ProjectContainer>
-    </VisibilitySensor>
-  );
-};
+				</ProjectTextBottom>
+				<div />
+				<img src={require(`../../assets/imgs/projects/${image}`)} alt="" />
+				{tech.length > 0
+					? tech.map(name => {
+						return (
+							<Badge
+								className="mr-2"
+								key={name}
+								color="neutral"
+								isSolid={hovering === false}
+							>
+								{name}
+							</Badge>
+						)
+					})
+					: null}
+			</ProjectContainer>
+		</VisibilitySensor>
+	)
+}
 
-export default Project;
+export default Project

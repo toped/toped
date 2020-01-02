@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from "prop-types"
-import styled from "styled-components";
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export const ObjectWrapper = styled.div`
   /* height: 50vh; */
@@ -10,34 +10,34 @@ export const ObjectWrapper = styled.div`
   font-weight: bold;
   top: ${props => props.top + '%'};;
   left: ${props => props.left + '%'};;
-`;
+`
 
 const HeroObject = ({children, topPosition, leftPosition, fontSize}) => {
 
-  //Creating an inline style because of performance issues in safari
-  const divStyle = {
-    transform: `translate(-${topPosition}%, -${leftPosition}%)`
-  }
+	//Creating an inline style because of performance issues in safari
+	const divStyle = {
+		transform: `translate(-${topPosition}%, -${leftPosition}%)`
+	}
 
-  return (
-    <ObjectWrapper style={divStyle} top={topPosition} left={leftPosition} size={fontSize}>
-    {children}
-    </ObjectWrapper>
-  )
+	return (
+		<ObjectWrapper style={divStyle} top={topPosition} left={leftPosition} size={fontSize}>
+			{children}
+		</ObjectWrapper>
+	)
 }
 
 HeroObject.propTypes = {
-  content: PropTypes.string,
-  topPosition: PropTypes.number,
-  leftPosition: PropTypes.number,
-  fontSize: PropTypes.number,
+	content: PropTypes.string,
+	topPosition: PropTypes.number,
+	leftPosition: PropTypes.number,
+	fontSize: PropTypes.number,
 }
 
 HeroObject.defaultProps = {
-  content: '</>',
-  topPosition: 50,
-  leftPosition: 50,
-  fontSize: 25,
+	content: '</>',
+	topPosition: 50,
+	leftPosition: 50,
+	fontSize: 25,
 }
 
 export default HeroObject

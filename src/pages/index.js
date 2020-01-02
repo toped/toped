@@ -1,18 +1,13 @@
-import React from "react"
-import SEO from "../components/seo"
-import Typed from "react-typed";
-import styled from "styled-components";
-import FullPageDiv from "../components/primitives/FullPageDiv";
-import About from "../components/About";
-import Portfolio from "../components/Portfolio";
-import Skills from "../components/Skills";
-import { Link } from "react-scroll";
-import { AiOutlineArrowDown, AiOutlineSketch } from 'react-icons/ai'
-import { FaReact } from 'react-icons/fa'
-import { DiJavascript1, DiMongodb, DiPhotoshop, DiOpensource } from 'react-icons/di'
-import HeroObject from "../components/HeroObject"
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
-
+import React from 'react'
+import SEO from '../components/seo'
+import Typed from 'react-typed'
+import styled from 'styled-components'
+import FullPageDiv from '../components/primitives/FullPageDiv'
+import About from '../components/About'
+import Portfolio from '../components/Portfolio'
+import Skills from '../components/Skills'
+import { Link } from 'react-scroll'
+import { AiOutlineArrowDown } from 'react-icons/ai'
 
 const HeroMessage = styled.div`
   position: absolute;
@@ -24,14 +19,7 @@ const HeroMessage = styled.div`
     font-size: 1.5rem;
     color: #fff;
     display: inline-block;
-  }
-  input {
-    display: block;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 100;
+    margin-bottom: 0;
   }
   @media (min-width: 992px) {
     h1,
@@ -39,7 +27,7 @@ const HeroMessage = styled.div`
       font-size: 3rem;
     }
   }
-`;
+`
 
 const Welcome = styled.p`
   font-size: 1rem !important;
@@ -52,21 +40,39 @@ const Welcome = styled.p`
   @media (min-width: 992px) {
     font-size: 1.5rem !important;
   }
-`;
+`
 
 const FirstName = styled.h1`
   font-weight: 900;
-`;
+`
 
 const LastName = styled.h1`
   font-weight: 400;
-`;
+`
 
-const DotCom = styled.h2`
-  font-size: 2rem !important;
-  font-weight: 700;
-  opacity: 0.5;
-`;
+const DotCom = styled.div`
+  display: inline-block;
+
+  input {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    opacity: 0.5;
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 100;
+    text-transform: uppercase;
+    /* border: 1px solid red; */
+    width: 100vw;
+  }
+
+  @media (min-width: 992px) {
+    input {
+      font-size: 3rem !important;
+      width: 60vw;
+    }
+  }
+`
 
 const ScrollButton = styled.div`
   position: absolute;
@@ -74,7 +80,7 @@ const ScrollButton = styled.div`
   height: 55px;
   bottom: 50px;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -20%);
   z-index: 11;
   border: 2px solid white;
   border-radius: 100%;
@@ -102,67 +108,54 @@ const ScrollButton = styled.div`
     outline: none;
     background: rgba(255, 255, 255, 0.1);
   }
-`;
+`
 
 const IndexPage = () => (
-  <ParallaxProvider>
-    <SEO title="Home" />
-      <FullPageDiv>
-        {/* <HeroObject fontSize={15} leftPosition={55}>
-          <FaReact/>
-        </HeroObject>
-      <HeroObject fontSize={10} topPosition={20}>
-        <DiJavascript1/>
-      </HeroObject>
-      <HeroObject fontSize={10} topPosition={15} leftPosition={84}>
-        <DiMongodb/>
-      </HeroObject>
-      <HeroObject fontSize={9} topPosition={39} leftPosition={82}>
-        <DiPhotoshop/>
-      </HeroObject>
-      <HeroObject fontSize={7} topPosition={60} leftPosition={90}>
-        <DiOpensource/>
-      </HeroObject>
-      <HeroObject fontSize={7} topPosition={75} leftPosition={80}>
-        <AiOutlineSketch/>
-      </HeroObject> */}
-        <div className="container-fluid">
-          <div className="row">
-            <HeroMessage>
-              <Welcome>welcome to my site</Welcome>
-              <FirstName>TOPE</FirstName>
-              <LastName>DARAMOLA</LastName>
-              <DotCom>.com</DotCom>
-              <Typed
-                strings={[
-                  "Software Developer",
-                  "Software Engineer",
-                  "Content Designer",
-                  "Amateur Photographer",
-                  "Creative Professional"
-                ]}
-                typeSpeed={40}
-                backSpeed={50}
-                showCursor={true}
-                smartBackspace={true}
-                attr="value"
-                loop
-              >
-                <input type="text" />
-              </Typed>{" "}
-            </HeroMessage>
-          </div>
-          <ScrollButton>
-            <Link to="about" spy={true} smooth={"easeOutCubic"} duration={500}>
-              <AiOutlineArrowDown className="animated"/>
-            </Link>
-          </ScrollButton>
-        </div>
-      </FullPageDiv>
-      <About />
-      <Skills />
-      <Portfolio />
-    </ParallaxProvider>
+	<>
+		<SEO title="Home" />
+		<FullPageDiv>
+			<div className="container-fluid">
+				<div className="row">
+					<HeroMessage>
+						<Welcome>welcome to my site</Welcome>
+						<FirstName>TOPE</FirstName>
+						<LastName>DARAMOLA</LastName>
+						{' '}
+						<DotCom>
+							<Typed
+								strings={[
+									'is a Software Developer.',
+									'is a Software Engineer.',
+									'is a Content Designer.',
+									'is an Amateur Photographer.',
+									'is a Creative Professional.'
+								]}
+								typeSpeed={40}
+								backSpeed={50}
+								showCursor={true}
+								cursorChar="_"
+								autoInsertCss={true}
+								smartBackspace={true}
+								attr="value"
+								loop
+							>
+								<input type="text" />
+							</Typed>
+						</DotCom>
+						{' '}
+					</HeroMessage>
+				</div>
+				<ScrollButton>
+					<Link to="about" spy={true} smooth={'easeOutCubic'} duration={500}>
+						<AiOutlineArrowDown className="animated"/>
+					</Link>
+				</ScrollButton>
+			</div>
+		</FullPageDiv>
+		<About />
+		<Skills />
+		<Portfolio />
+	</>
 )
 
 export default IndexPage
