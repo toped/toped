@@ -28,6 +28,23 @@ const SocialSection = styled.div`
   }
 `;
 
+const Overlay = styled.div`
+  /* background: rgba(16, 16, 16, .35); */
+  height: 100%;
+    width: 100%;
+    position: absolute;
+`
+
+const PortraitContainer = styled.img`
+  filter: grayscale(55%);
+  :hover{ 
+    filter: grayscale(0%);
+    transform: scale(1.035);
+  };
+  
+  transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+`
+
 const About = () => {
   return (
     <AboutContainer id="about" className="container-fluid border-bottom">
@@ -82,7 +99,8 @@ const About = () => {
           </BioContainer>
         </div>
         <div className="col-md-4 col-fill col-no-padding">
-          <img src={Portrait} className="img-fluid" alt="" />
+        <Overlay/>
+          <PortraitContainer src={Portrait} className="img-fluid" alt="" />
         </div>
       </div>
     </AboutContainer>

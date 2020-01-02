@@ -7,7 +7,12 @@ import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Skills from "../components/Skills";
 import { Link } from "react-scroll";
-import { AiOutlineArrowDown } from 'react-icons/ai'
+import { AiOutlineArrowDown, AiOutlineSketch } from 'react-icons/ai'
+import { FaReact } from 'react-icons/fa'
+import { DiJavascript1, DiMongodb, DiPhotoshop, DiOpensource } from 'react-icons/di'
+import HeroObject from "../components/HeroObject"
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+
 
 const HeroMessage = styled.div`
   position: absolute;
@@ -100,9 +105,27 @@ const ScrollButton = styled.div`
 `;
 
 const IndexPage = () => (
-  <>
+  <ParallaxProvider>
     <SEO title="Home" />
       <FullPageDiv>
+        {/* <HeroObject fontSize={15} leftPosition={55}>
+          <FaReact/>
+        </HeroObject>
+      <HeroObject fontSize={10} topPosition={20}>
+        <DiJavascript1/>
+      </HeroObject>
+      <HeroObject fontSize={10} topPosition={15} leftPosition={84}>
+        <DiMongodb/>
+      </HeroObject>
+      <HeroObject fontSize={9} topPosition={39} leftPosition={82}>
+        <DiPhotoshop/>
+      </HeroObject>
+      <HeroObject fontSize={7} topPosition={60} leftPosition={90}>
+        <DiOpensource/>
+      </HeroObject>
+      <HeroObject fontSize={7} topPosition={75} leftPosition={80}>
+        <AiOutlineSketch/>
+      </HeroObject> */}
         <div className="container-fluid">
           <div className="row">
             <HeroMessage>
@@ -139,7 +162,7 @@ const IndexPage = () => (
       <About />
       <Skills />
       <Portfolio />
-    </>
+    </ParallaxProvider>
 )
 
 export default IndexPage
