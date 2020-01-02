@@ -46,7 +46,7 @@ const Skills = () => {
 				</div>
 			</div>
 			<div className="row plr-4 pb-6">
-				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='500'>
+				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
 					<SkillsTitle>Development</SkillsTitle>
 					<SkillsBullet>HTML5/CSS3</SkillsBullet>
 					<SkillsBullet>JavaScript</SkillsBullet>
@@ -57,14 +57,14 @@ const Skills = () => {
 					<SkillsBullet>SQL</SkillsBullet>
 					<SkillsBullet>MongoDB</SkillsBullet>
 				</div>
-				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='1000'>
+				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
 					<SkillsTitle>Project Management</SkillsTitle>
 					<SkillsBullet>GitHub</SkillsBullet>
 					<SkillsBullet>GitFlow</SkillsBullet>
 					<SkillsBullet>Asana</SkillsBullet>
 					<SkillsBullet>Atlassian Jira</SkillsBullet>
 				</div>
-				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='1500'>
+				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
 					<SkillsTitle>Personal</SkillsTitle>
 					<SkillsBullet>Playing trumpet</SkillsBullet>
 					<SkillsBullet>Photography</SkillsBullet>
