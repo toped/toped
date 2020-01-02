@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const SmallText = styled.p`
   text-align: left;
@@ -6,6 +6,6 @@ export const SmallText = styled.p`
   font-size: 16px;
   padding: 0;
   margin: 0;
-`;
+`
 
-export default SmallText;
+export default SmallText

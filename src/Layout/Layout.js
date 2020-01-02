@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import AOS from 'aos'
 
 import { ThemeContextProvider } from './ThemeContext'
+import { useEffect } from 'react'
 
 function Layout({ children }) {
+
+	useEffect(() => { AOS.init() })
 	return (
 		<ThemeContextProvider>
 			<div>
