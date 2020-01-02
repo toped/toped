@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { Badge } from "evergreen-ui";
 import VisibilitySensor from "react-visibility-sensor";
@@ -105,6 +105,7 @@ const ProjectTextBottom = styled.p`
 `;
 
 const Project = props => {
+  const [isMobile , setIsMobile] = useState(true)
   const [hovering, setHovering] = useState(false);
 
   const handleOnMouseEnter = () => {
@@ -119,8 +120,9 @@ const Project = props => {
     }
   };
 
-  const isMobile = window.matchMedia("only screen and (max-width: 760px)")
-    .matches;
+  useEffect(() => {
+     setIsMobile(window.matchMedia("only screen and (max-width: 760px)").matches);
+  }, [])
 
   const { name, projectType, image, url, tech } = props;
 
