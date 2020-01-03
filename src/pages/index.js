@@ -9,6 +9,7 @@ import Skills from '../components/Skills'
 import Footer from '../components/Footer'
 import { Link } from 'react-scroll'
 import { AiOutlineArrowDown } from 'react-icons/ai'
+import HeroObject from '../components/HeroObject'
 
 const HeroMessage = styled.div`
   position: absolute;
@@ -114,6 +115,9 @@ const ScrollButton = styled.div`
 const IndexPage = () => (
 	<>
 		<SEO title="Home" />
+		<HeroObject>
+      TOPEDARAMOLA.
+		</HeroObject>
 		<FullPageDiv>
 			<div className="container-fluid">
 				<div className="row">

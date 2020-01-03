@@ -2,7 +2,7 @@ import styled from 'styled-components'
 // import bg from '../../assets/imgs/header-img.jpg'
 
 export const FullPageDiv = styled.div`
-  height: 96vh;
+  height: 100vh;
   box-sizing: border-box;
   background: rgba(16, 16, 16, 1.75);
   -webkit-background-size: cover;
