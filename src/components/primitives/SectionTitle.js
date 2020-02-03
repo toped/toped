@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SectionTitle = styled.p`
   font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-weight: 900;
 
   span {
