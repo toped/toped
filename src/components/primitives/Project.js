@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { Badge } from 'evergreen-ui'
 import VisibilitySensor from 'react-visibility-sensor'
+import PropTypes from 'prop-types'
 
 const ProjectContainer = styled.div`
   font-family: "Nunito Sans", sans-serif;
@@ -158,6 +159,15 @@ const Project = props => {
 			</ProjectContainer>
 		</VisibilitySensor>
 	)
+}
+
+Project.propTypes = {
+	name: PropTypes.string,
+	image: PropTypes.any,
+	url: PropTypes.string,
+	tech: PropTypes.any,
+	length: PropTypes.any,
+	projectType: PropTypes.any
 }
 
 export default Project

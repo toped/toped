@@ -33,12 +33,12 @@ const SkillsTitle = styled.div`
 
 const Skills = () => {
 	return (
-		<div className="conatiner-fluid border-bottom">
+		<div className="container-fluid border-bottom">
 			<div>
 				<div className="col-lg-8">
 					<SkillsContainer data-aos="fade-up" data-aos-duration={1000}>
 						<SectionTitle>Skills</SectionTitle>
-            Over the years, I've had the opportunity to work with a wide variety
+            Over the years, I&apos;ve had the opportunity to work with a wide variety
             of technologies to build cool projects and manage them from start to
             finish. Here are some of my favorite languages, project management
             tools, and hobbies that help me see each project through.
