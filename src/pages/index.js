@@ -65,7 +65,7 @@ const DotCom = styled.div`
     font-weight: 100;
     text-transform: uppercase;
     /* border: 1px solid red; */
-    width: 100vw;
+    width: 85vw;
   }
 
   @media (min-width: 992px) {
@@ -115,7 +115,7 @@ const ScrollButton = styled.div`
 const IndexPage = () => (
 	<>
 		<SEO title="Home" />
-		<HeroObject>
+		<HeroObject >
       TOPEDARAMOLA.
 		</HeroObject>
 		<FullPageDiv>
