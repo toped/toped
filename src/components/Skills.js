@@ -40,7 +40,7 @@ const Skills = () => {
 						<SectionTitle>Skills</SectionTitle>
             Over the years, I&apos;ve had the opportunity to work with a wide variety
             of technologies to build cool projects and manage them from start to
-            finish. Here are some of my favorite languages, project management
+            finish. Here are some of my favorite development technologies, project management
             tools, and hobbies that help me see each project through.
 					</SkillsContainer>
 				</div>
@@ -50,12 +50,12 @@ const Skills = () => {
 					<SkillsTitle>Development</SkillsTitle>
 					<SkillsBullet>HTML5/CSS3</SkillsBullet>
 					<SkillsBullet>JavaScript</SkillsBullet>
-					<SkillsBullet>Angular</SkillsBullet>
 					<SkillsBullet>React</SkillsBullet>
-					<SkillsBullet>PHP</SkillsBullet>
-					<SkillsBullet>Python</SkillsBullet>
-					<SkillsBullet>SQL</SkillsBullet>
+					<SkillsBullet>GatsbyJS</SkillsBullet>
 					<SkillsBullet>MongoDB</SkillsBullet>
+					<SkillsBullet>SQL</SkillsBullet>
+					<SkillsBullet>Angular</SkillsBullet>
+					<SkillsBullet>Python</SkillsBullet>
 				</div>
 				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
 					<SkillsTitle>Project Management</SkillsTitle>
@@ -66,10 +66,10 @@ const Skills = () => {
 				</div>
 				<div className="col-md-4" data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
 					<SkillsTitle>Personal</SkillsTitle>
-					<SkillsBullet>Playing trumpet</SkillsBullet>
+					<SkillsBullet>Trumpet</SkillsBullet>
 					<SkillsBullet>Photography</SkillsBullet>
-					<SkillsBullet>Gaming</SkillsBullet>
-					<SkillsBullet>Sleeping</SkillsBullet>
+					<SkillsBullet>Podcasting</SkillsBullet>
+					<SkillsBullet>Sleeping <span role="img" aria-label="shrug">🤷🏾‍♂️</span></SkillsBullet>
 				</div>
 			</div>
 		</div>
