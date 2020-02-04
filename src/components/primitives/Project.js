@@ -105,7 +105,7 @@ const ProjectTextBottom = styled.p`
   font-weight: 300;
 `
 
-const Project = props => {
+const Project = ({ name, projectType, image, url, tech }) => {
 	const [isMobile , setIsMobile] = useState(true)
 	const [hovering, setHovering] = useState(false)
 
@@ -125,8 +125,6 @@ const Project = props => {
 		setIsMobile(window.matchMedia('only screen and (max-width: 760px)').matches)
 	}, [])
 
-	const { name, projectType, image, url, tech } = props
-
 	return (
 		<VisibilitySensor onChange={onChange} minTopValue={100} active={isMobile}>
 			<ProjectContainer
@@ -141,7 +139,7 @@ const Project = props => {
           [ {projectType} - <a href={url}>View Project</a> ]
 				</ProjectTextBottom>
 				<div />
-				<img src={require(`../../assets/imgs/projects/${image}`)} alt="" />
+				<img src={require('../../assets/imgs/projects/'+image)} alt="" />
 				{tech.length > 0
 					? tech.map(name => {
 						return (
