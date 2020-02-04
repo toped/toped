@@ -34,9 +34,9 @@ const About = () => {
               About<span>Me</span>
 						</SectionTitle>
 						<p>
-              Hey! I&apos;m Tope, a web developer and creative professional residing
+              Hey! I&apos;m Tope, a <b>software engineer</b> and <b>creative professional</b> residing
               in Dallas, TX. I&apos;ve been designing and developing professionally
-              for 5 years, and I work on all types of projects: web & mobile
+              for 5+ years, and I work on all types of projects: web & mobile
               applications, marketing campaigns, non-profit websites and more.
 							<b>
 								<Email href="mailto:tope.daram@gmail.com?subject=Lets's get in touch">
