@@ -39,7 +39,7 @@ const About = () => {
               for 5+ years, and I work on all types of projects: web & mobile
               applications, marketing campaigns, non-profit websites and more.
 							<b>
-								<Email href="mailto:tope.daram@gmail.com?subject=Lets's get in touch">
+								<Email href="mailto:tope.daram@gmail.com?subject=Let's get in touch">
                   tope.daram@gmail.com
 								</Email>
 							</b>
