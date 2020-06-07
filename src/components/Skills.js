@@ -3,9 +3,13 @@ import styled from 'styled-components'
 import SectionTitle from './primitives/SectionTitle'
 
 const SkillsContainer = styled.div`
-  padding: 6rem 4rem;
+  padding: 6rem 2rem;
   padding-bottom: 2rem;
   flex: 1;
+
+	@media (min-width: 992px) {
+		padding: 6rem 4rem;
+	}
 
   a {
     color: rgba(0, 0, 0, 0.9);
