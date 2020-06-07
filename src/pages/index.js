@@ -3,6 +3,7 @@ import SEO from '../components/seo'
 import Typed from 'react-typed'
 import styled from 'styled-components'
 import FullPageDiv from '../components/primitives/FullPageDiv'
+import CommunitySupport from '../components/CommunitySupport'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
 import Skills from '../components/Skills'
@@ -115,10 +116,10 @@ const ScrollButton = styled.div`
 const IndexPage = () => (
 	<>
 		<SEO title="Home" />
-		<HeroObject >
-      TOPEDARAMOLA.
-		</HeroObject>
 		<FullPageDiv>
+			<HeroObject >
+        TOPEDARAMOLA.
+			</HeroObject>
 			<div className="container-fluid">
 				<div className="row">
 					<HeroMessage>
@@ -131,7 +132,6 @@ const IndexPage = () => (
 								strings={[
 									'is a Software Developer.',
 									'is a Software Engineer.',
-									'is a Content Designer.',
 									'is an Amateur Photographer.',
 									'is a Creative Professional.'
 								]}
@@ -151,12 +151,13 @@ const IndexPage = () => (
 					</HeroMessage>
 				</div>
 				<ScrollButton>
-					<Link to="about" spy={true} smooth={'easeOutCubic'} duration={500}>
+					<Link to="fist-div" spy={true} smooth={'easeOutCubic'} duration={500}>
 						<AiOutlineArrowDown className="animated"/>
 					</Link>
 				</ScrollButton>
 			</div>
 		</FullPageDiv>
+		<CommunitySupport/>
 		<About />
 		<Skills />
 		<Portfolio />
