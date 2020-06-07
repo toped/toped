@@ -9,9 +9,13 @@ const AboutContainer = styled.div`
 `
 
 const BioContainer = styled.div`
-  padding: 6rem 4rem;
+  padding: 6rem 2rem;
   flex: 1;
 
+	@media (min-width: 992px) {
+		padding: 6rem 4rem;
+	}
+	
   a {
     color: rgba(0, 0, 0, 0.9);
     display: block;

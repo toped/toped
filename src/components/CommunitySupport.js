@@ -6,10 +6,16 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 50px 20%;
+  text-align: left;
+  padding: 50px 3rem;
   background-color: #000;
   color: #FFF;
+
+  @media (min-width: 992px) {
+    padding: 50px 20%;
+    text-align: center;
+  }
+
   h2 {
     text-transform: uppercase;
   }
