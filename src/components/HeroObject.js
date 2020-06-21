@@ -10,6 +10,8 @@ export const ObjectWrapper = styled.div`
   font-weight: bold;
   top: ${props => props.top + '%'};
   left: -${props => props.left + '%'};
+	z-index: -1;
+
 	img {
 		opacity: .3;
 	}
