@@ -3,6 +3,13 @@ import Project from './primitives/Project'
 
 const projects = [
 	{
+		name: 'Utter Fun Games',
+		type: 'Web Development',
+		imageUrl: 'utter.png',
+		url:'https://utter.fun/',
+		tech: ['React', 'GatsbyJS', 'GraphQL', 'Firebase', 'Cloud Functions']
+	},
+	{
 		name: 'dpMedia Studio',
 		type: 'Web Development',
 		imageUrl: 'dpmedia.jpg',
