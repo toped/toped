@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'evergreen-ui'
+
+import { useTheme } from '../Layout/ThemeProvider'
 import { Typography } from '../components/primitives'
-import { ThemeProvider } from '../Layout'
 import GatsbyIcon from '../assets/img/svgs/gatsby.svg'
 import GraphQLIcon from '../assets/img/svgs/graphql.svg'
 import ApolloIcon from '../assets/img/svgs/apollo.svg'
@@ -65,8 +66,7 @@ const Plus = styled(Typography)`
 `
 
 export const Home = () => {
-	const { theme: themeCtx } = useContext(ThemeProvider.Context)
-	const [theme] = themeCtx
+	const [theme] = useTheme()
 
 	return (
 		<HomePageWrapper>

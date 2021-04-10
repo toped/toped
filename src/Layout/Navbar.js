@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import  Link from 'gatsby-link'
 import { Navbar, Alignment } from '@blueprintjs/core'
+
 import { Pane } from 'evergreen-ui'
 import { ThemeToggle, Typography } from '../components/primitives'
-import { ThemeProvider } from '../Layout'
+import { useTheme } from './ThemeProvider'
 
 const Container = styled(Navbar)`
 	&& {
@@ -35,8 +36,7 @@ const _ = ({
 	page, fixed, ...props
 }) => {
 
-	const { theme: themeCtx } = useContext(ThemeProvider.Context)
-	const setTheme = themeCtx[1]
+	const [,setTheme] = useTheme()
 	
 	return (
 		<Container {...props} fixedToTop={fixed}>
@@ -57,9 +57,11 @@ const _ = ({
 						))
 					}
 				</NavLinks>
-				<ThemeToggle className="ml-4" onChange={() => setTheme(lastThemeType => (
-					lastThemeType === 'light' ? 'dark' : 'light'
-				))} />
+				<ThemeToggle className="ml-4" onChange={() => setTheme(
+					lastThemeType => (
+						lastThemeType === 'light' ? 'dark' : 'light'
+					)
+				)} />
 			</Navbar.Group>
 		</Container>
 	)
