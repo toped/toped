@@ -1,10 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../Layout/Layout'
+import { ApolloProvider } from '@apollo/react-hooks'
+import { client } from './client'
+import ThemeController from '../Layout/ThemeController'
 
-export const wrapRootElement = ({ element }) => {
-	return (<Layout>{element}</Layout>)
-}
+export const wrapRootElement = ({ element }) => (
+	<ApolloProvider client={client}>
+		<ThemeController>
+			{element}
+		</ThemeController>
+	</ApolloProvider>
+)
 
 wrapRootElement.propTypes = {
 	element: PropTypes.any
