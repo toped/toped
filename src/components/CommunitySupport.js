@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { Typography } from './primitives'
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,12 +47,16 @@ const CommunitySupport = () => {
 		<Wrapper id="fist-div" className="container-fluid">
 			<div className="row">
 				<div className="col-md-12">
-					<h2>Support the Black Community!</h2>
-					<p>With everything going on in the world, it is important that we take care and support one another. 
-Like many of you out there, I am overwhelmed with feelings of uncertainty of the outcomes of our
-protests and petitions for change. However, my hope is that no matter the outcome, when the dust settles,
-our community will not forget our agenda of <b>the advancement to the black community</b>. We <b>MUST</b> Keep God first, 
-and support each other on this path to change.</p>
+					<Typography variant="h3" weight="black" className="mt-2" invertColor>
+            Support the Black Community!
+					</Typography>
+					<Typography variant="p" invertColor> 
+            With everything going on in the world, it is important that we take care and support one another. 
+            Like many of you out there, I am overwhelmed with feelings of uncertainty of the outcomes of our
+            protests and petitions for change. However, my hope is that no matter the outcome, when the dust settles,
+            our community will not forget our agenda of <b>the advancement to the black community</b>. We <b>MUST</b> Keep God first, 
+            and support each other on this path to change.
+					</Typography> 
 					<br/>
 					<a href="https://linktr.ee/toped">Take Action</a>
 				</div>

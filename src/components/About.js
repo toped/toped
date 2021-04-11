@@ -1,11 +1,15 @@
 import React from 'react'
-import SmallText from '../components/primitives/SmallText'
+import SmallText from '../components/styled-components/SmallText'
 import styled from 'styled-components'
-import SectionTitle from './primitives/SectionTitle'
+
 import SocialSection from './primitives/SocialSection'
+import { Typography } from './primitives'
 
 const AboutContainer = styled.div`
   background: #f2f2f2;
+	.me {
+    font-weight: 400;
+	}
 `
 
 const BioContainer = styled.div`
@@ -29,15 +33,15 @@ const Email = styled.a`
 
 const About = () => {
 	return (
-		<AboutContainer id="about" className="container-fluid border-bottom">
-			<div className="row">
-				<div className="col-md-8">
+		<AboutContainer id="about">
+			<div>
+				<div className="w-full md:w-2/3">
 					<BioContainer data-aos="fade-up" data-aos-duration={750}>
 						<SmallText>just a little</SmallText>
-						<SectionTitle>
-              About<span>Me</span>
-						</SectionTitle>
-						<p>
+						<Typography variant="h2" weight="black" className="mt-2">
+							About<span className="me">Me</span>
+						</Typography>
+						<Typography variant="p"> 
               Hey! I&apos;m Tope, a <b>software engineer</b> and <b>creative professional</b> residing
               in Dallas, TX. I&apos;ve been designing and developing professionally
               for 5+ years, and I work on all types of projects: web & mobile
@@ -47,11 +51,11 @@ const About = () => {
                   tope.daram@gmail.com
 								</Email>
 							</b>
-						</p>
+						</Typography> 
 						<SocialSection/>
 					</BioContainer>
 				</div>
-				<div className="col-md-4 col-fill col-no-padding">
+				<div>
 					{/* <Overlay/> */}
 					{/* <PortraitContainer src={Portrait} className="img-fluid" alt="" /> */}
 				</div>
