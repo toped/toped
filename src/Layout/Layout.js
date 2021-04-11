@@ -11,11 +11,10 @@ import Footer from './Footer'
 import { LoadingMessages } from '../../utils/models'
 
 const Container = styled.div`
-	background: ${({theme}) => theme.grey_6};
+	background: ${({theme, background}) => background || theme.grey_6};
 `
 
 const Hero = styled.div`
-  min-height: 20vh;
   align-content: center;
 `
 
@@ -27,20 +26,20 @@ const ThemedSpinner = styled(Spinner)`
 	}
 `
 
-const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, content, title, error}) => {
+const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, content, title, error, background}) => {
 
 	useEffect(() => { AOS.init() })
 
 	return (
-		<Container>
+		<Container background={background}>
 			<SEO title={title} />
-			<div className="flex flex-col w-full h-screen content-between">
+			<div className="flex flex-col w-full content-between">
 				{
 					navbar
 				}
 				{ (hero && !error)
           && 
-					<Hero className="flex">{ hero }</Hero>
+					<Hero className="grid grid-cols-1">{ hero }</Hero>
 				}
 				{
 					(breadcrumbs && !error) && <>{ breadcrumbs }</>
@@ -102,7 +101,8 @@ _.propTypes = {
 	/** Message to display while loading.
    * If one is not provided, a random message will be generated */
 	loadingMessage: PropTypes.string,
-	error: PropTypes.object
+	error: PropTypes.object,
+	background: PropTypes.string
 }
 _.defaultProps = {
 	navbar: <Navbar/>,

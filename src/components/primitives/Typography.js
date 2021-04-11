@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Badge from './Badge'
 
 const fontTypes = css`
+  position: relative;
   color: ${({theme, color, invertColor}) => 
 		color 
 			? color 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Typography } from './primitives'
 import { ThemedStyles } from '../Layout/ThemeProvider'
 
-const SkillsContainer = styled.div`
+const SkillsHeader = styled.div`
   padding: 6rem 2rem;
   padding-bottom: 2rem;
   flex: 1;
@@ -45,7 +45,7 @@ const Skills = () => {
 		<div>
 			<div>
 				<div className="w-full md:w-2/3">
-					<SkillsContainer data-aos="fade-up" data-aos-duration={1000}>
+					<SkillsHeader data-aos="fade-up" data-aos-duration={1000}>
 						<Typography variant="h2" weight="black" className="mt-2" color={ThemedStyles.light.text}>
 							Skills
 						</Typography>
@@ -55,7 +55,7 @@ const Skills = () => {
 							finish. Here are some of my favorite development technologies, project management
 							tools, and hobbies that help me see each project through.
 						</Typography>
-					</SkillsContainer>
+					</SkillsHeader>
 				</div>
 			</div>
 			<SkillsSection className="flex flex-col justify-between w-full md:w-2/3 lg:flex-row">

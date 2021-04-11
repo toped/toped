@@ -51,7 +51,7 @@ const Portfolio = () => {
 								<Project
 									name={project.name}
 									projectType={project.type}
-									image={require('../assets/img/projects/'+project.imageUrl)}
+									image={require('../assets/img/projects/'+project.imageUrl).default}
 									url={project.url}
 									tech={project.tech}
 								/>
