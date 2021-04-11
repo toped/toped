@@ -30,7 +30,7 @@ function SocialSection() {
 			>
 				<AiFillLinkedin/>
 			</a>
-			<a
+			{/* <a
 				href="https://www.instagram.com/_toped/"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -43,7 +43,7 @@ function SocialSection() {
 				rel="noopener noreferrer"
 			>
 				<AiFillFacebook/>
-			</a>
+			</a> */}
 		</SocialSectionWrapper>
 	)
 }

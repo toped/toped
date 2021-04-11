@@ -2,12 +2,12 @@ import React from 'react'
 import SEO from '../components/seo'
 import Typed from 'react-typed'
 import styled from 'styled-components'
-import FullPageDiv from '../components/primitives/FullPageDiv'
+import { Layout } from '../Layout'
+import FullPageDiv from '../components/styled-components/FullPageDiv'
 import CommunitySupport from '../components/CommunitySupport'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
 import Skills from '../components/Skills'
-import Footer from '../components/Footer'
 import { Link } from 'react-scroll'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import HeroObject from '../components/HeroObject'
@@ -94,15 +94,17 @@ const ScrollButton = styled.div`
   color: rgba(225, 225, 225, 1);
   background: transparent;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   i {
     color: #fff;
   }
 
   a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:8px;
+
+    color: rgba(225, 225, 225, 1);
   }
 
   &:focus,
@@ -113,7 +115,7 @@ const ScrollButton = styled.div`
   }
 `
 
-const IndexPage = () => (
+const Content = () => (
 	<>
 		<SEO title="Home" />
 		<FullPageDiv>
@@ -161,8 +163,15 @@ const IndexPage = () => (
 		<About />
 		<Skills />
 		<Portfolio />
-		<Footer/>
 	</>
+)
+
+
+const IndexPage = () => ( 
+	<Layout
+		title="Home"
+		content={<Content/>}
+	/>
 )
 
 export default IndexPage

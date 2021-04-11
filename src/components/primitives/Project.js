@@ -3,17 +3,14 @@ import styled, { css } from 'styled-components'
 import { Badge } from 'evergreen-ui'
 import VisibilitySensor from 'react-visibility-sensor'
 import PropTypes from 'prop-types'
+import Typography from './Typography'
 
 const ProjectContainer = styled.div`
+  position: relative;
   font-family: "Nunito Sans", sans-serif;
   padding: 6rem 4rem;
   flex: 1;
   overflow: hidden;
-
-  a {
-    color: #000;
-    text-decoration: underline;
-  }
 
   img {
     opacity: 0;
@@ -28,7 +25,7 @@ const ProjectContainer = styled.div`
     transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     transform: scale(1.035);
   }
-  div {
+  .black-bg {
     opacity: 0;
     position: absolute;
     width: 100%;
@@ -45,36 +42,24 @@ const ProjectContainer = styled.div`
 		props.visible &&
     props.mobile &&
     css`
-      color: #fff;
-
-      a {
-        color: #fff;
-      }
-
       img {
         opacity: 0.9;
         transform: scale(1);
       }
 
-      div {
+      .black-bg {
         opacity: 0.4;
         transform: scale(1);
       }
     `}
 
   :hover {
-    color: #fff;
-
-    a {
-      color: #fff;
-    }
-
     img {
       opacity: 0.9;
       transform: scale(1);
     }
 
-    div {
+    .black-bg {
       opacity: 0.4;
       transform: scale(1);
     }
@@ -87,29 +72,32 @@ const ProjectContainer = styled.div`
   }
 `
 
-const ProjectName = styled.h2`
+const ProjectName = styled(Typography)`
   font-weight: 700;
 `
-
-const ProjectTextTop = styled.p`
+const ProjectTextTop = styled(Typography)`
   font-family: "Roboto Condensed", sans-serif;
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 400;
 `
-
-const ProjectTextBottom = styled.p`
-  font-size: 0.9rem;
+const ProjectTextBottom = styled(Typography)`
+  display: inline-flex;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 300;
+`
+const ProjectLink = styled(Typography)`
+  display: inline-flex;
+  text-decoration: underline;
 `
 
 const Project = ({ name, projectType, image, url, tech }) => {
 	const [isMobile , setIsMobile] = useState(true)
 	const [hovering, setHovering] = useState(false)
+	const [visible, setVisible] = useState(false)
 
-	const handleOnMouseEnter = () => {
+	const handleOnMouseEnterExit = () => {
 		if (!isMobile) {
 			setHovering(prev => !prev)
 		}
@@ -117,7 +105,7 @@ const Project = ({ name, projectType, image, url, tech }) => {
 
 	const onChange = isVisible => {
 		if (isMobile) {
-			setHovering(isVisible)
+			setVisible(isVisible)
 		}
 	}
 
@@ -128,18 +116,21 @@ const Project = ({ name, projectType, image, url, tech }) => {
 	return (
 		<VisibilitySensor onChange={onChange} minTopValue={100} active={isMobile}>
 			<ProjectContainer
-				onMouseEnter={handleOnMouseEnter}
-				onMouseLeave={handleOnMouseEnter}
-				visible={hovering}
+				onMouseEnter={handleOnMouseEnterExit}
+				onMouseLeave={handleOnMouseEnterExit}
+				visible={visible}
 				mobile={isMobile}
 			>
-				<ProjectTextTop>Client</ProjectTextTop>
-				<ProjectName>{name}</ProjectName>
-				<ProjectTextBottom>
-          [ {projectType} - <a href={url}>View Project</a> ]
-				</ProjectTextBottom>
-				<div />
-				<img src={require('../../assets/imgs/projects/'+image)} alt="" />
+				<ProjectTextTop invertColor={!isMobile ? hovering : visible}>Client</ProjectTextTop>
+				<ProjectName variant="h3" invertColor={!isMobile ? hovering : visible}>{name}</ProjectName>
+				<div className="mb-4">
+					<ProjectTextBottom variant="small" invertColor={!isMobile ? hovering : visible}>[ {projectType}  - </ProjectTextBottom>
+					<a href={url}>
+						<ProjectLink variant="small" invertColor={!isMobile ? hovering : visible}>View Project ]</ProjectLink>
+					</a>
+				</div>
+				<div className="black-bg" />
+				<img src={image} alt="" />
 				{tech.length > 0
 					? tech.map(name => {
 						return (

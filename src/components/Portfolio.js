@@ -40,19 +40,18 @@ const projects = [
 ]
 const Portfolio = () => {
 	return (
-		<div className="container-fluid">
-			<div className="row hide-overflow">
+		<div>
+			<div>
 				{projects.length > 0
 					? projects.map(project => {
 						return (
 							<div
 								key={project.name}
-								className="col-lg-12 border-bottom col-no-padding hide-overflow"
 							>
 								<Project
 									name={project.name}
 									projectType={project.type}
-									image={project.imageUrl}
+									image={require('../assets/img/projects/'+project.imageUrl).default}
 									url={project.url}
 									tech={project.tech}
 								/>
