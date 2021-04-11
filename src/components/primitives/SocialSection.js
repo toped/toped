@@ -7,7 +7,7 @@ const SocialSectionWrapper = styled.div`
   text-align: center;
 
   a {
-    color: rgba(0, 0, 0, 0.9);
+    color: ${({theme}) => theme.text};
     padding: 5px 20px 0 0;
     font-size: 1.5rem !important;
   }

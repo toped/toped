@@ -10,7 +10,7 @@ const useTheme = () => (useContext(Context))
 
 
 const ThemeProvider = ({ children }) => {
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState('dark')
 
 	return (
 		<Context.Provider value={[theme, setTheme]}>
@@ -24,4 +24,4 @@ ThemeProvider.propTypes = {
 	children: PropTypes.any
 }
 
-export { ThemeProvider, useTheme}
+export { ThemeProvider, useTheme, ThemedStyles}

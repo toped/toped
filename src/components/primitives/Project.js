@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Badge } from 'evergreen-ui'
 import VisibilitySensor from 'react-visibility-sensor'
-import PropTypes from 'prop-types'
+
 import Typography from './Typography'
+import { ThemedStyles } from '../../Layout/ThemeProvider'
 
 const ProjectContainer = styled.div`
   position: relative;
@@ -109,6 +111,18 @@ const Project = ({ name, projectType, image, url, tech }) => {
 		}
 	}
 
+	const getTextColor = () => {
+		if(!isMobile){
+			return hovering 
+				? ThemedStyles.light.inverted_text
+				: ThemedStyles.light.text
+		} else {
+			return visible 
+				? ThemedStyles.light.inverted_text 
+				: ThemedStyles.light.text
+		}
+	}
+
 	useEffect(() => {
 		setIsMobile(window.matchMedia('only screen and (max-width: 760px)').matches)
 	}, [])
@@ -121,12 +135,12 @@ const Project = ({ name, projectType, image, url, tech }) => {
 				visible={visible}
 				mobile={isMobile}
 			>
-				<ProjectTextTop invertColor={!isMobile ? hovering : visible}>Client</ProjectTextTop>
-				<ProjectName variant="h3" invertColor={!isMobile ? hovering : visible}>{name}</ProjectName>
+				<ProjectTextTop color={getTextColor()}>Client</ProjectTextTop>
+				<ProjectName variant="h3" color={getTextColor()}>{name}</ProjectName>
 				<div className="mb-4">
-					<ProjectTextBottom variant="small" invertColor={!isMobile ? hovering : visible}>[ {projectType}  - </ProjectTextBottom>
+					<ProjectTextBottom variant="small" color={getTextColor()}>[ {projectType}  - </ProjectTextBottom>
 					<a href={url}>
-						<ProjectLink variant="small" invertColor={!isMobile ? hovering : visible}>View Project ]</ProjectLink>
+						<ProjectLink variant="small" color={getTextColor()}>View Project ]</ProjectLink>
 					</a>
 				</div>
 				<div className="black-bg" />

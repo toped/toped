@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { Typography } from './primitives'
+import { ThemedStyles } from '../Layout/ThemeProvider'
 
 const SkillsContainer = styled.div`
   padding: 6rem 2rem;
@@ -44,10 +46,10 @@ const Skills = () => {
 			<div>
 				<div className="w-full md:w-2/3">
 					<SkillsContainer data-aos="fade-up" data-aos-duration={1000}>
-						<Typography variant="h2" weight="black" className="mt-2">
+						<Typography variant="h2" weight="black" className="mt-2" color={ThemedStyles.light.text}>
 							Skills
 						</Typography>
-						<Typography variant="p"> 
+						<Typography variant="p" color={ThemedStyles.light.text}> 
 							Over the years, I&apos;ve had the opportunity to work with a wide variety
 							of technologies to build cool projects and manage them from start to
 							finish. Here are some of my favorite development technologies, project management
@@ -58,33 +60,33 @@ const Skills = () => {
 			</div>
 			<SkillsSection className="flex flex-col justify-between w-full md:w-2/3 lg:flex-row">
 				<div data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
-					<SkillsTitle variant="h2">Development</SkillsTitle>
-					<SkillsBullet variant="p">HTML5/CSS3</SkillsBullet>
-					<SkillsBullet variant="p">JavaScript</SkillsBullet>
-					<SkillsBullet variant="p">Node.JS</SkillsBullet>
-					<SkillsBullet variant="p">React</SkillsBullet>
-					<SkillsBullet variant="p">GatsbyJS</SkillsBullet>
-					<SkillsBullet variant="p">MongoDB</SkillsBullet>
-					<SkillsBullet variant="p">GraphQL</SkillsBullet>
-					<SkillsBullet variant="p">SQL</SkillsBullet>
-					<SkillsBullet variant="p">Angular</SkillsBullet>
-					<SkillsBullet variant="p">Python</SkillsBullet>
+					<SkillsTitle variant="h2" color={ThemedStyles.light.text}>Development</SkillsTitle>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>HTML5/CSS3</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>JavaScript</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Node.JS</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>React</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>GatsbyJS</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>MongoDB</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>GraphQL</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>SQL</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Angular</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Python</SkillsBullet>
 				</div>
 				<div data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
-					<SkillsTitle variant="h2">Project Management</SkillsTitle>
-					<SkillsBullet variant="p">Agile Devleopment</SkillsBullet>
-					<SkillsBullet variant="p">GitHub</SkillsBullet>
-					<SkillsBullet variant="p">GitFlow</SkillsBullet>
-					<SkillsBullet variant="p">Asana</SkillsBullet>
-					<SkillsBullet variant="p">Atlassian Jira</SkillsBullet>
-					<SkillsBullet variant="p">Notion</SkillsBullet>
+					<SkillsTitle variant="h2" color={ThemedStyles.light.text}>Project Management</SkillsTitle>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Agile Devleopment</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>GitHub</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>GitFlow</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Asana</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Atlassian Jira</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Notion</SkillsBullet>
 				</div>
 				<div  data-aos="fade-up" data-aos-duration={1000} data-aos-delay='200'>
-					<SkillsTitle variant="h2">Personal</SkillsTitle>
-					<SkillsBullet variant="p">Trumpet</SkillsBullet>
-					<SkillsBullet variant="p">Photography</SkillsBullet>
-					<SkillsBullet variant="p">Podcasting</SkillsBullet>
-					<SkillsBullet variant="p">Giving Back</SkillsBullet>
+					<SkillsTitle variant="h2" color={ThemedStyles.light.text}>Personal</SkillsTitle>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Trumpet</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Photography</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Podcasting</SkillsBullet>
+					<SkillsBullet variant="p" color={ThemedStyles.light.text}>Giving Back</SkillsBullet>
 				</div>
 			</SkillsSection>
 		</div>

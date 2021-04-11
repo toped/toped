@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Typography } from './primitives'
+import { ThemedStyles } from '../Layout/ThemeProvider'
 
 const Wrapper = styled.div`
   display: flex;
@@ -43,14 +44,15 @@ const Wrapper = styled.div`
   }
 ` 
 const CommunitySupport = () => {
+
 	return (
 		<Wrapper id="fist-div" className="container-fluid">
 			<div className="row">
 				<div className="col-md-12">
-					<Typography variant="h3" weight="black" className="mt-2" invertColor>
+					<Typography variant="h3" weight="black" className="mt-2" color={ThemedStyles.light.inverted_text}>
             Support the Black Community!
 					</Typography>
-					<Typography variant="p" invertColor> 
+					<Typography className="mb-8" variant="p" color={ThemedStyles.light.inverted_text}> 
             With everything going on in the world, it is important that we take care and support one another. 
             Like many of you out there, I am overwhelmed with feelings of uncertainty of the outcomes of our
             protests and petitions for change. However, my hope is that no matter the outcome, when the dust settles,
