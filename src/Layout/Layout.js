@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Pane, Spinner } from 'evergreen-ui'
+import AOS from 'aos'
+
 import { Typography } from '../components/primitives'
 import SEO from '../components/seo'
 import Navbar from './Navbar'
@@ -25,10 +27,10 @@ const ThemedSpinner = styled(Spinner)`
 	}
 `
 
-const _ = (props) => {
-	const {
-		navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, content, title, error
-	} = props
+const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, content, title, error}) => {
+
+	useEffect(() => { AOS.init() })
+
 	return (
 		<Container>
 			<SEO title={title} />
@@ -72,7 +74,8 @@ const _ = (props) => {
 							<Typography variant="h1" weight="black" className="m-0">{error.networkError.statusCode}</Typography>
 							<Typography variant="h3">{error.name}</Typography>
 							<Typography variant="body" className="p-5 text-center">
-								Uh-oh, something just isn&apos;t right... 🤔</Typography>
+								Uh-oh, something just isn&apos;t right... 🤔
+							</Typography>
 						</Pane>
 					}
 				</div>

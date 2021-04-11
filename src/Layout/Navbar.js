@@ -4,14 +4,12 @@ import styled from 'styled-components'
 import  Link from 'gatsby-link'
 import { Navbar, Alignment } from '@blueprintjs/core'
 
-import { Pane } from 'evergreen-ui'
 import { ThemeToggle, Typography } from '../components/primitives'
 import { useTheme } from './ThemeProvider'
 
 const Container = styled(Navbar)`
 	&& {
-		box-shadow: ${({ boxshadow }) => boxshadow};
-		background: ${({theme}) => theme.grey_6};
+		background: rgba(16, 16, 16, 1.75) !important;
 	}
 `
 
@@ -28,8 +26,8 @@ const ThemedLink = styled(Link)`
 `
 
 const NavbarLinks = [
-	{ name: 'Home', link: '/' },
-	{ name: 'Example API', link: '/examples' }
+	// { name: 'Home', link: '/' },
+	// { name: 'Blog', link: '/blog' }
 ]
 
 const _ = ({
@@ -41,27 +39,25 @@ const _ = ({
 	return (
 		<Container {...props} fixedToTop={fixed}>
 			<Navbar.Group align={Alignment.LEFT} className="pl-10">
-				<Pane paddingX=".5rem">
-					<Typography>GatsbyJS Template</Typography>
-				</Pane>
+				{/* no content */}
 			</Navbar.Group>
 			<Navbar.Group align={Alignment.RIGHT} className="pl-4">
 				<NavLinks>
 					{
 						NavbarLinks.map(({ name, link }, i) => (
 							<ThemedLink key={i} to={link}>
-								<Typography className="px-2" weight={page === name ? 'bold' : 'normal'}>
+								<Typography variant="body" className="px-2 mb-0" weight={page === name ? 'bold' : 'normal'}>
 									{ name }
 								</Typography>
 							</ThemedLink>
 						))
 					}
 				</NavLinks>
-				<ThemeToggle className="ml-4" onChange={() => setTheme(
+				{/* <ThemeToggle className="ml-4" onChange={() => setTheme(
 					lastThemeType => (
 						lastThemeType === 'light' ? 'dark' : 'light'
 					)
-				)} />
+				)} /> */}
 			</Navbar.Group>
 		</Container>
 	)

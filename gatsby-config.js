@@ -4,16 +4,16 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata: {
-		title: 'gatsby-apollo-starter',
-		description: 'Starter repository for a Gatsby site communicating with a GraphQL backend. This project uses Apollo Client to request and cache your data, as well as update your UI.',
-		author: '@toped',
+		title: 'Tope Daramola',
+		description: 'Tope\'s creative projects portfolio.',
+		author: '@_toped',
 	},
 	plugins: [
 		{
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
 				// The property ID; the tracking code won't be generated without it
-				trackingId: 'UA-XXXXXXXXX-X',
+				trackingId: 'UA-136779217-1',
 				// Defines where to place the tracking script - `true` in the head and `false` in the body
 				head: true
 			},
@@ -39,13 +39,13 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				name: 'gatsby-starter-default',
-				short_name: 'starter',
+				name: 'toped',
+				short_name: 'toped',
 				start_url: '/',
 				background_color: '#663399',
 				theme_color: '#663399',
 				display: 'minimal-ui',
-				icon: 'src/assets/img/gatsby-icon.png', // This path is relative to the root of the site.
+				icon: 'src/assets/img/logo/logo.svg', // This path is relative to the root of the site.
 			},
 		},
 		'gatsby-plugin-offline',

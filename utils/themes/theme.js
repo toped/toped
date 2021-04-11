@@ -26,7 +26,7 @@ export const ThemedStyles = {
 		grey_5: 'rgb(44,44,46)',
 		grey_6: 'rgb(28,28,30)',
 		//Dynamic Colors - Your color pallette goes here
-		text: 'rgb(255,69,58)',
+		text: 'rgb(242,242,247)',
 		inverted_text: 'rgb(28,28,30)'
 	},
 	light: {
@@ -56,7 +56,7 @@ export const ThemedStyles = {
 		grey_5: 'rgb(229,229,234)',
 		grey_6: 'rgb(242,242,247)',
 		//Dynamic Colors - Your color pallette goes here
-		text: 'rgb(28,28,30)',
+		text: 'rgba(0,0,0,.8)',
 		inverted_text: 'rgb(242,242,247)',
 	},
 }
