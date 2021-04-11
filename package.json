@@ -48,6 +48,7 @@
         "react-visibility-sensor": "^5.1.1",
         "sift": "^13.5.0",
         "styled-components": "^5.2.3",
+        "twin.macro": "^2.3.2",
         "typography": "^0.16.19"
     },
     "devDependencies": {

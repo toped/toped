@@ -40,7 +40,7 @@ const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, conten
 				}
 				{ (hero && !error)
           && 
-					<Hero className="grid grid-cols-1">{ hero }</Hero>
+					<Hero className="flex">{ hero }</Hero>
 				}
 				{
 					(breadcrumbs && !error) && <>{ breadcrumbs }</>
