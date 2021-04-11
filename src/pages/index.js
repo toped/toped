@@ -10,9 +10,11 @@ import Portfolio from '../components/Portfolio'
 import Skills from '../components/Skills'
 import { Link } from 'react-scroll'
 import { AiOutlineArrowDown } from 'react-icons/ai'
-import HeroObject from '../components/HeroObject'
+import { Typography } from '../components/primitives'
 
 const HeroMessage = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 30%;
   margin-left: 10%;
@@ -20,8 +22,6 @@ const HeroMessage = styled.div`
   h2 {
     font-family: Montserrat, sans-serif;
     font-size: 1.5rem;
-    color: #fff;
-    display: inline-block;
     margin-bottom: 0;
   }
   @media (min-width: 992px) {
@@ -32,7 +32,7 @@ const HeroMessage = styled.div`
   }
 `
 
-const Welcome = styled.p`
+const Welcome = styled(Typography)`
   font-size: 1rem !important;
   display: block;
   font-weight: 400;
@@ -45,16 +45,15 @@ const Welcome = styled.p`
   }
 `
 
-const FirstName = styled.h1`
+const FirstName = styled(Typography)`
   font-weight: 900;
 `
 
-const LastName = styled.h1`
+const LastName = styled(Typography)`
   font-weight: 400;
 `
 
 const DotCom = styled.div`
-  display: inline-block;
 
   input {
     font-size: 1rem !important;
@@ -62,7 +61,7 @@ const DotCom = styled.div`
     opacity: 0.5;
     background: none;
     border: none;
-    color: #fff;
+    color: ${({theme}) => theme.text};
     font-weight: 100;
     text-transform: uppercase;
     /* border: 1px solid red; */
@@ -71,7 +70,7 @@ const DotCom = styled.div`
 
   @media (min-width: 992px) {
     input {
-      font-size: 2rem !important;
+      font-size: 1.5rem !important;
       width: 60vw;
     }
   }
@@ -85,31 +84,26 @@ const ScrollButton = styled.div`
   left: 50%;
   transform: translate(-50%, -20%);
   z-index: 11;
-  border: 2px solid white;
+  border: 2px solid ${({theme}) => theme.text };
   border-radius: 100%;
   font-size: 26px;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
-  color: rgba(225, 225, 225, 1);
   background: transparent;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  i {
-    color: #fff;
-  }
 
   a {
     padding-top:8px;
 
-    color: rgba(225, 225, 225, 1);
+    color: ${({theme}) => theme.text };
   }
 
   &:focus,
   &:hover {
-    color: #fff;
     outline: none;
     background: rgba(255, 255, 255, 0.1);
   }
@@ -119,15 +113,14 @@ const Content = () => (
 	<>
 		<SEO title="Home" />
 		<FullPageDiv>
-			<HeroObject >
-        TOPEDARAMOLA.
-			</HeroObject>
-			<div className="container-fluid">
-				<div className="row">
-					<HeroMessage>
-						<Welcome>welcome to my site</Welcome>
-						<FirstName>TOPE</FirstName>
-						<LastName>DARAMOLA</LastName>
+			<div>
+				<HeroMessage>
+					<Welcome variant="p">welcome to my site</Welcome>
+					<div className="flex flex-col items-start sm:flex-row sm:items-end">
+						<div className="flex mr-2">
+							<FirstName variant="h1" className="mt-2">TOPE</FirstName>
+							<LastName variant="h1" className="mt-2">DARAMOLA</LastName>
+						</div>
 						{' '}
 						<DotCom>
 							<Typed
@@ -150,14 +143,14 @@ const Content = () => (
 							</Typed>
 						</DotCom>
 						{' '}
-					</HeroMessage>
-				</div>
-				<ScrollButton>
-					<Link to="fist-div" spy={true} smooth={'easeOutCubic'} duration={500}>
-						<AiOutlineArrowDown className="animated"/>
-					</Link>
-				</ScrollButton>
+					</div>
+				</HeroMessage>
 			</div>
+			<ScrollButton>
+				<Link to="fist-div" spy={true} smooth={'easeOutCubic'} duration={500}>
+					<AiOutlineArrowDown className="animated"/>
+				</Link>
+			</ScrollButton>
 		</FullPageDiv>
 		<CommunitySupport/>
 		<About />

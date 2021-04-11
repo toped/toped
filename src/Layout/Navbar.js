@@ -8,9 +8,8 @@ import { ThemeToggle, Typography } from '../components/primitives'
 import { useTheme } from './ThemeProvider'
 
 const Container = styled(Navbar)`
-	&& {
-		background: rgba(16, 16, 16, 1.75) !important;
-	}
+	background-color: ${({theme}) => theme.background};
+	box-shadow: none;
 `
 
 const NavLinks = styled.div`
@@ -53,11 +52,11 @@ const _ = ({
 						))
 					}
 				</NavLinks>
-				{/* <ThemeToggle className="ml-4" onChange={() => setTheme(
+				<ThemeToggle className="ml-4" onChange={() => setTheme(
 					lastThemeType => (
 						lastThemeType === 'light' ? 'dark' : 'light'
 					)
-				)} /> */}
+				)} />
 			</Navbar.Group>
 		</Container>
 	)

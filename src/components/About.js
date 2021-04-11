@@ -3,6 +3,7 @@ import SmallText from '../components/styled-components/SmallText'
 import styled from 'styled-components'
 
 import SocialSection from './primitives/SocialSection'
+import { ThemedStyles } from '../Layout/ThemeProvider'
 import { Typography } from './primitives'
 
 const AboutContainer = styled.div`
@@ -38,10 +39,10 @@ const About = () => {
 				<div className="w-full md:w-2/3">
 					<BioContainer data-aos="fade-up" data-aos-duration={750}>
 						<SmallText>just a little</SmallText>
-						<Typography variant="h2" weight="black" className="mt-2">
+						<Typography variant="h2" weight="black" className="mt-2" color={ThemedStyles.light.text}>
 							About<span className="me">Me</span>
 						</Typography>
-						<Typography variant="p"> 
+						<Typography variant="p" color={ThemedStyles.light.text}> 
               Hey! I&apos;m Tope, a <b>software engineer</b> and <b>creative professional</b> residing
               in Dallas, TX. I&apos;ve been designing and developing professionally
               for 5+ years, and I work on all types of projects: web & mobile
