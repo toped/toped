@@ -1,5 +1,4 @@
 export default {
-	production: `${process.env.GATSBY_URL}/graphql`,
-	development: `${process.env.GATSBY_URL}/graphql`,
-	demo: 'https://countries.trevorblades.com/'
+	production: `https://graphql.contentful.com/content/v1/spaces/${process.env.GATSBY_CONTENTFUL_SPACE_ID}`,
+	development: `${process.env.GATSBY_URL}/graphql`
 }

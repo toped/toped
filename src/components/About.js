@@ -7,7 +7,6 @@ import { ThemedStyles } from '../Layout/ThemeProvider'
 import { Typography } from './primitives'
 
 const AboutContainer = styled.div`
-  background: #f2f2f2;
 	.me {
     font-weight: 400;
 	}

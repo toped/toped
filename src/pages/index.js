@@ -11,6 +11,7 @@ import Skills from '../components/Skills'
 import { Link } from 'react-scroll'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import { Typography } from '../components/primitives'
+import { ThemedStyles } from '../Layout/ThemeProvider'
 
 const HeroMessage = styled.div`
   display: flex;
@@ -164,6 +165,7 @@ const IndexPage = () => (
 	<Layout
 		title="Home"
 		content={<Content/>}
+		background={ThemedStyles.light.background}
 	/>
 )
 

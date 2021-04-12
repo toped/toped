@@ -25,8 +25,8 @@ const ThemedLink = styled(Link)`
 `
 
 const NavbarLinks = [
-	// { name: 'Home', link: '/' },
-	// { name: 'Blog', link: '/blog' }
+	{ name: 'Home', link: '/' },
+	{ name: 'Blog', link: '/blog' }
 ]
 
 const _ = ({
@@ -45,7 +45,7 @@ const _ = ({
 					{
 						NavbarLinks.map(({ name, link }, i) => (
 							<ThemedLink key={i} to={link}>
-								<Typography variant="body" className="px-2 mb-0" weight={page === name ? 'bold' : 'normal'}>
+								<Typography variant="p" className="px-2 mb-0" weight={page === name ? 'bold' : 'normal'}>
 									{ name }
 								</Typography>
 							</ThemedLink>
