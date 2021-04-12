@@ -33,7 +33,7 @@ const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, conten
 	return (
 		<Container background={background}>
 			<SEO title={title} />
-			<div className="flex flex-col w-full content-between">
+			<div className="flex flex-col min-h-screen w-full content-between">
 				{
 					navbar
 				}

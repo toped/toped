@@ -21,11 +21,11 @@ const HeroContainer = styled.div`
 	background-color: #2B59C3;
 `
 const StageLeft = styled.div`
-	${tw`hidden ml-10 sm:flex flex-col`};
+	${tw`hidden p-10 sm:flex flex-col`};
 	flex: 1;
 `	
 const StageRight = styled.div`
-	${tw`flex flex-col pb-4 ml-10`};
+	${tw`flex flex-col px-10 md:px-32 md:py-10`};
 	flex: 2;
 `
 
@@ -35,19 +35,19 @@ const Hero = ({blog}) => {
 			<Container>
 				<StageRight>
 					<Typography variant="p" weight="bold" color={ThemedStyles.light.inverted_text}>
-						{blog.topic}
+						{blog?.topic}
 					</Typography>
 					<Typography variant="h1" weight="bold" className="m-0" color={ThemedStyles.light.inverted_text}>
-						{blog.title}
+						{blog?.title}
 					</Typography>
 					<Typography variant="p" className="mt-2" color={ThemedStyles.light.inverted_text}>
 					By
 						{
-							blog.authorCollection.items.map((author, index) => (
-								<React.Fragment key={`${author.firstName} ${author.lastName}`}>
+							blog?.authorCollection.items.map((author, index) => (
+								<React.Fragment key={author.sys.id}>
 									{
-										blog.authorCollection.items.length > 1 
-											? index === blog.authorCollection.items.length - 1 
+										blog?.authorCollection.items.length > 1 
+											? index === blog?.authorCollection.items.length - 1 
 												? ` and ${author.firstName} ${author.lastName} on `
 												: ` ${author.firstName} ${author.lastName},`
 											: ` ${author.firstName} ${author.lastName} on `
@@ -55,7 +55,7 @@ const Hero = ({blog}) => {
 								</React.Fragment>
 							))
 						}
-						<Moment date={blog.publishDate} format="dddd, D MMMM YYYY"/>
+						<Moment date={blog?.publishDate} format="dddd, D MMMM YYYY"/>
 					</Typography>
 				</StageRight>
 			</Container>
@@ -64,22 +64,23 @@ const Hero = ({blog}) => {
 }
 
 Hero.propTypes = {
-	blog: PropTypes.array
+	blog: PropTypes.object
 }
 
 const Content = ({blogs}) => {
-	console.log(blogs)
 	return (
-		<Container className="pt-20">
+		<Container className="pt-24">
 			<StageLeft>
-				<Typography variant="h4" weight="bold" className="m-0 py-8">
+				<div className="flex flex-col items-start md:items-center">
+					<Typography variant="h4" weight="bold" className="m-0">
 						Latest posts
-				</Typography>
+					</Typography>
+				</div>
 			</StageLeft>
 			<StageRight>
 				{
-					blogs.map(blog => (
-						<BlogThumbnail key={blog.title} blog={blog}/>
+					blogs?.map(blog => (
+						<BlogThumbnail key={blog.sys.id} blog={blog}/>
 					))
 				}
 			</StageRight>
@@ -98,8 +99,8 @@ const Home = () => {
 	return (
 		<Layout
 			title="Blog | Tope Daramola"
-			hero={!loading && <Hero blog={data.postCollection.items[0]}/>}
-			content={!loading && <Content blogs={data.postCollection.items || []}/>}
+			hero={<Hero blog={data?.postCollection?.items[0]}/>}
+			content={<Content blogs={data?.postCollection?.items}/>}
 			loading={loading}
 			error={error}
 		/>
