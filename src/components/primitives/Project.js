@@ -21,7 +21,7 @@ const ProjectContainer = styled.div`
     left: 0;
     /* z-index: -2; */
     width: 100vw;
-    /* height: 100vh; */
+    height: 100vh;
     object-fit: cover;
     object-position: 50% 0; /* positioned top left of the content box */
     transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -147,7 +147,7 @@ const Project = ({ name, projectType, image, url, tech }) => {
 					</a>
 				</div>
 				<img src={image} alt="" />
-				<div className="black-bg relative z-10" />
+				<div className="black-bg relative" />
 
 				{tech.length > 0
 					? tech.map(name => {
