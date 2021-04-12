@@ -19,9 +19,9 @@ const ProjectContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -2;
+    /* z-index: -2; */
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     object-fit: cover;
     object-position: 50% 0; /* positioned top left of the content box */
     transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -37,7 +37,6 @@ const ProjectContainer = styled.div`
     background: #000;
     transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     transform: scale(1.035);
-    z-index: -1;
   }
 
   ${props =>
@@ -45,7 +44,7 @@ const ProjectContainer = styled.div`
     props.mobile &&
     css`
       img {
-        opacity: 0.9;
+        opacity: 0.7;
         transform: scale(1);
       }
 
@@ -57,7 +56,7 @@ const ProjectContainer = styled.div`
 
   :hover {
     img {
-      opacity: 0.9;
+      opacity: 0.7;
       transform: scale(1);
     }
 
@@ -76,22 +75,26 @@ const ProjectContainer = styled.div`
 
 const ProjectName = styled(Typography)`
   font-weight: 700;
+	z-index: 20;
 `
 const ProjectTextTop = styled(Typography)`
   font-family: "Roboto Condensed", sans-serif;
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 400;
+	z-index: 20;
 `
 const ProjectTextBottom = styled(Typography)`
   display: inline-flex;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 300;
+	z-index: 20;
 `
 const ProjectLink = styled(Typography)`
   display: inline-flex;
   text-decoration: underline;
+	z-index: 20;
 `
 
 const Project = ({ name, projectType, image, url, tech }) => {
@@ -143,13 +146,14 @@ const Project = ({ name, projectType, image, url, tech }) => {
 						<ProjectLink variant="small" color={getTextColor()}>View Project ]</ProjectLink>
 					</a>
 				</div>
-				<div className="black-bg" />
 				<img src={image} alt="" />
+				<div className="black-bg relative z-10" />
+
 				{tech.length > 0
 					? tech.map(name => {
 						return (
 							<Badge
-								className="mr-2"
+								className="mr-2 relative z-10"
 								key={name}
 								color="neutral"
 								isSolid={hovering === false}
