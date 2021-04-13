@@ -5,8 +5,11 @@ require('dotenv').config({
 module.exports = {
 	siteMetadata: {
 		title: 'Tope Daramola',
-		description: 'Tope\'s creative projects portfolio.',
+		description: 'Dallas based software engineer with a passion for Javascript.',
 		author: '@_toped',
+		siteUrl: 'https://topedaramola.com',
+		keywords: ['tope', 'toped', 'tope daramola', 'software', 'engineer', 'facebook', 'apple', 'amazon', 'netflix', 'google'],
+		shareImage: `${__dirname}/src/assets/img/share-image.png`
 	},
 	plugins: [
 		{

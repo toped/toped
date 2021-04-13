@@ -98,7 +98,7 @@ const Home = () => {
 
 	return (
 		<Layout
-			title="Blog | Tope Daramola"
+			title="My Blog"
 			hero={<Hero blog={data?.postCollection?.items[0]}/>}
 			content={<Content blogs={data?.postCollection?.items}/>}
 			loading={loading}
