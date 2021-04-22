@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Pane, Spinner } from 'evergreen-ui'
+import { useStaticQuery, graphql } from 'gatsby' // to query for image data
 import AOS from 'aos'
 
 import { Typography } from '../components/primitives'
@@ -26,13 +27,30 @@ const ThemedSpinner = styled(Spinner)`
 	}
 `
 
-const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, content, title, error, background}) => {
+const _ = ({navbar, footer, isLoading, loadingMessage, hero, breadcrumbs, content, title, error, background, image}) => {
 
 	useEffect(() => { AOS.init() })
 
+	const {shareCard} = useStaticQuery(graphql`
+	query {
+		shareCard: file(name: {eq: "share-image"}) {
+			childImageSharp {
+				resize(width: 1200) {
+					src
+					height
+					width
+				}
+			}
+		}
+	}
+`)
+
 	return (
 		<Container background={background}>
-			<SEO title={title} />
+			<SEO
+				title={title} 
+				image={image || shareCard.childImageSharp.resize}
+			/>
 			<div className="flex flex-col min-h-screen w-full content-between">
 				{
 					navbar
@@ -102,7 +120,8 @@ _.propTypes = {
    * If one is not provided, a random message will be generated */
 	loadingMessage: PropTypes.string,
 	error: PropTypes.object,
-	background: PropTypes.string
+	background: PropTypes.string,
+	image: PropTypes.object
 }
 _.defaultProps = {
 	navbar: <Navbar/>,
