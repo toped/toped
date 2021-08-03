@@ -140,7 +140,7 @@ const Content = () => (
 								attr="value"
 								loop
 							>
-								<input type="text" />
+								<input type="text" disabled />
 							</Typed>
 						</DotCom>
 						{' '}
