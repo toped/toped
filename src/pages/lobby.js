@@ -1,22 +1,22 @@
 import React from 'react'
-
 import SEO from '../components/seo'
-import Home from '../components/Home'
+
+import Lobby from '../components/Lobby'
 import { Layout } from '../Layout'
 
 const Content = () => (
 	<>
-		<SEO title="Home" />
-		<Home/>
+		<SEO title="Join Game" />
+		<Lobby/>
 	</>
 )
 
 
-const IndexPage = () => ( 
+const LobbyPage = () => ( 
 	<Layout
-		title="Home"
+		title="Join Game"
 		content={<Content/>}
 	/>
 )
 
-export default IndexPage
+export default LobbyPage

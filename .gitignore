@@ -69,3 +69,12 @@ yarn-error.log
 .yarn-integrity
 
 yarn.lock
+
+functions/service_key.json
+
+.firebase/
+
+functions/.runtimeconfig.json
+
+# non-functional resources
+non functional resources/

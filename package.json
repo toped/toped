@@ -19,6 +19,7 @@
         "countries-list": "^2.6.1",
         "eslint": "^7.23.0",
         "evergreen-ui": "^5.1.2",
+        "firebase": "^7.16.1",
         "gatsby": "^3.2.1",
         "gatsby-cli": "^3.2.0",
         "gatsby-image": "^3.2.0",
@@ -41,9 +42,11 @@
         "provinces": "^1.11.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+        "react-firebaseui": "^5.0.2",
         "react-helmet": "^6.1.0",
         "react-icons": "^4.2.0",
         "react-moment": "^1.1.1",
+        "react-router-dom": "^5.3.0",
         "react-scroll": "^1.8.2",
         "react-typed": "^1.2.0",
         "react-typography": "^0.16.19",
@@ -75,7 +78,7 @@
     ],
     "license": "MIT",
     "scripts": {
-        "dev": "concurrently -k \"nodemon --quiet server\" \"gatsby develop\"",
+        "dev": "gatsby develop",
         "build": "gatsby build",
         "start": "node server",
         "build-start": "npm run-script build && node server",
@@ -85,7 +88,8 @@
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
         "lint": "node_modules/eslint/bin/eslint.js src --fix",
         "storybook": "NODE_ENV=production start-storybook -p 6006 -s public",
-        "build-storybook": "NODE_ENV=production build-storybook -s public"
+        "build-storybook": "NODE_ENV=production build-storybook -s public",
+        "deploy": "gatsby clean && gatsby build && firebase deploy --only hosting"
     },
     "repository": {
         "type": "git",

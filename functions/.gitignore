@@ -1,0 +1,13 @@
+node_modules/
+
+.runtimeconfig.json
+
+.firebase-debug.log
+
+service_keu.json
+
+ui.debug.log
+
+.env
+
+/firebaseFunctions

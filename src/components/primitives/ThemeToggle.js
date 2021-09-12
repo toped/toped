@@ -8,7 +8,7 @@ const ToggleSlot = styled.div`
   width: 6rem;
   border: 3px solid #e4e7ec;
   border-radius: 3rem;
-  background-color: #374151;
+  background-color:${({theme}) => theme.primary};;
   transition: background-color 250ms;
 `
 
