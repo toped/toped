@@ -31,6 +31,27 @@ const Email = styled.a`
   text-decoration: underline;
 `
 
+const WalletLink = styled.a`
+	appearance: none;
+	outline: 0;
+	background-color: #000;
+	border: 0;
+	padding: 10px 30px;
+	color: #fff !important;
+	border-radius: 3px;
+	width: 250px;
+	cursor: pointer;
+	font-size: 18px;
+	transition-duration: 0.25s;
+	margin: 20px 0;
+
+	&:hover{
+		background-color: rgb(245, 247, 249);
+		color: #000 !important;
+		text-decoration: none;
+	}
+`
+
 const About = () => {
 	return (
 		<AboutContainer id="about">
@@ -51,6 +72,7 @@ const About = () => {
                   tope.daram@gmail.com
 								</Email>
 							</b>
+							<WalletLink href="https://drive.google.com/uc?export=doanload&id=1qi2spE_TN1hA6lc-JdyPDg0_JB4JSK63">Add to my card to your Apple Wallet</WalletLink>
 						</Typography> 
 						<SocialSection/>
 					</BioContainer>
