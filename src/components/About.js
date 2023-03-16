@@ -34,7 +34,7 @@ const Email = styled.a`
 const WalletLink = styled.a`
 	appearance: none;
 	outline: 0;
-	background-color: #000;
+	background-color: rgba(0, 0, 0, 1);
 	border: 0;
 	padding: 10px 30px;
 	color: #fff !important;
@@ -44,10 +44,10 @@ const WalletLink = styled.a`
 	font-size: 18px;
 	transition-duration: 0.25s;
 	margin: 20px 0;
-
+  	text-align: center;
+	
 	&:hover{
-		background-color: rgb(245, 247, 249);
-		color: #000 !important;
+		background-color: rgba(0, 0, 0, 0.9);
 		text-decoration: none;
 	}
 `
