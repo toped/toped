@@ -5,10 +5,10 @@ import Template from '../components/Blog/Template'
 
 const BlogPage = () => (	
 	<>
-		<Router>
+		{/* <Router>
 			<Home path="/blog" />
 			<Template path="/blog/:topic/:year/:slug" />
-		</Router>
+		</Router> */}
 	</>
 )
 
